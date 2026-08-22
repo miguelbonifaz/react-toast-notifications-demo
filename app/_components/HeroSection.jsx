@@ -1,11 +1,33 @@
 'use client'
 
-import { ArrowUpRight, Check, Code2 } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { ArrowUpRight, Bell, Check, Code2 } from 'lucide-react'
 import { useToast } from '@zilver/react-toast-notifications'
 import { GITHUB_URL } from '../content'
 
-export default function HeroSection({ content }) {
+const TOAST_TYPES = ['success', 'info', 'warning', 'error']
+const TOAST_POSITIONS = [
+    'top-left',
+    'top-center',
+    'top-right',
+    'bottom-left',
+    'bottom-center',
+    'bottom-right',
+]
+
+export default function HeroSection({ content, onPositionChange, position }) {
     const { toast } = useToast()
+    const initialMessage = content.hero.playground.initialMessage
+    const [message, setMessage] = useState(initialMessage)
+    const [type, setType] = useState('success')
+    const previousInitialMessage = useRef(initialMessage)
+
+    useEffect(() => {
+        setMessage((current) => (
+            current === previousInitialMessage.current ? initialMessage : current
+        ))
+        previousInitialMessage.current = initialMessage
+    }, [initialMessage])
 
     function approveNotification() {
         toast({
@@ -13,6 +35,23 @@ export default function HeroSection({ content }) {
             type: 'success',
         })
     }
+
+    function launchNotification(event) {
+        event.preventDefault()
+
+        const trimmedMessage = message.trim()
+
+        if (!trimmedMessage) {
+            return
+        }
+
+        toast({
+            message: trimmedMessage,
+            type,
+        })
+    }
+
+    const codeMessage = message.replaceAll('\\', '\\\\').replaceAll("'", "\\'")
 
     return (
         <section className="hero" aria-labelledby="hero-title">
@@ -53,19 +92,54 @@ export default function HeroSection({ content }) {
                         </div>
                         <div className="code-window__body" aria-hidden="true">
                             <span className="code-line code-line--muted">01</span>
-                            <span className="code-line">
+                            <span className="code-line code-line--active">
                                 <b>toast</b>(
-                                <i>{`{ message: 'Saved!', type: 'success' }`}</i>)
+                                <i>{`{ message: '${codeMessage}', type: '${type}' }`}</i>)
                             </span>
                             <span className="code-line code-line--muted">02</span>
                             <span className="code-line code-line--soft">// feedback, handled</span>
                         </div>
-                        <div className="hero__fake-toast">
-                            <span className="hero__fake-toast-icon">
-                                <Check size={16} strokeWidth={2.5} aria-hidden="true" />
-                            </span>
-                            <span>{content.hero.visualLine}</span>
-                        </div>
+                        <form className="notification-form" onSubmit={launchNotification}>
+                            <label className="notification-form__field notification-form__field--message">
+                                <span>{content.hero.playground.message}</span>
+                                <input
+                                    maxLength={80}
+                                    required
+                                    type="text"
+                                    value={message}
+                                    onChange={(event) => setMessage(event.target.value)}
+                                />
+                            </label>
+                            <div className="notification-form__row">
+                                <label className="notification-form__field">
+                                    <span>{content.hero.playground.type}</span>
+                                    <select value={type} onChange={(event) => setType(event.target.value)}>
+                                        {TOAST_TYPES.map((option) => (
+                                            <option key={option} value={option}>
+                                                {content.hero.playground.types[option]}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </label>
+                                <label className="notification-form__field">
+                                    <span>{content.hero.playground.position}</span>
+                                    <select
+                                        value={position}
+                                        onChange={(event) => onPositionChange(event.target.value)}
+                                    >
+                                        {TOAST_POSITIONS.map((option) => (
+                                            <option key={option} value={option}>
+                                                {content.hero.playground.positions[option]}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </label>
+                            </div>
+                            <button className="button button--primary notification-form__submit" type="submit">
+                                <Bell size={16} aria-hidden="true" />
+                                {content.hero.playground.launch}
+                            </button>
+                        </form>
                     </div>
                     <span className="hero__visual-label">{content.hero.visualLabel}</span>
                 </div>

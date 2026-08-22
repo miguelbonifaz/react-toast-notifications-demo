@@ -39,7 +39,7 @@
 }
 
 .hero h1 {
-    font-size: clamp(3.8rem, 7.5vw, 7rem);
+    font-size: clamp(3.3rem, 6.5vw, 6rem);
     line-height: 0.92;
     max-width: 660px;
 }
@@ -135,7 +135,7 @@
     display: grid;
     gap: 15px;
     grid-template-columns: 27px 1fr;
-    padding: 30px 24px 92px;
+    padding: 30px 24px 28px;
 }
 
 .code-line {
@@ -144,6 +144,11 @@
     font-size: clamp(0.73rem, 1.25vw, 0.92rem);
     line-height: 1.4;
     white-space: nowrap;
+}
+
+.code-line--active {
+    overflow-wrap: anywhere;
+    white-space: normal;
 }
 
 .code-line--muted {
@@ -165,31 +170,64 @@
     font-style: normal;
 }
 
-.hero__fake-toast {
-    align-items: center;
-    background: #e7f3ea;
-    border: 1px solid rgba(167, 243, 208, 0.2);
-    border-radius: 11px;
-    bottom: 20px;
-    box-shadow: 0 13px 30px rgba(0, 0, 0, 0.24);
-    color: var(--ink);
-    display: flex;
-    font-size: 0.76rem;
-    gap: 10px;
-    left: 58px;
-    padding: 11px 14px;
-    position: absolute;
-    right: 18px;
+.notification-form {
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 15px;
+    padding: 20px 24px 24px;
 }
 
-.hero__fake-toast-icon {
-    align-items: center;
-    background: var(--mint-strong);
-    border-radius: 50%;
-    display: inline-flex;
-    height: 24px;
-    justify-content: center;
-    width: 24px;
+.notification-form__field {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+}
+
+.notification-form__field > span {
+    color: var(--paper-faint);
+    font-family: ui-monospace, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.notification-form input,
+.notification-form select {
+    background: rgba(16, 23, 20, 0.72);
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    color: var(--paper);
+    color-scheme: dark;
+    font-size: 0.8rem;
+    min-height: 40px;
+    min-width: 0;
+    padding: 0 11px;
+    transition: border-color 180ms ease, background 180ms ease;
+    width: 100%;
+}
+
+.notification-form input:hover,
+.notification-form select:hover {
+    background: rgba(16, 23, 20, 0.9);
+}
+
+.notification-form input:focus,
+.notification-form select:focus {
+    background: rgba(16, 23, 20, 0.9);
+    border-color: var(--mint-strong);
+    outline: 2px solid var(--mint);
+    outline-offset: 2px;
+}
+
+.notification-form__row {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.notification-form__submit {
+    min-height: 42px;
+    width: 100%;
 }
 
 .hero__visual-label {
@@ -232,7 +270,7 @@
     }
 
     .hero h1 {
-        font-size: clamp(3.4rem, 18vw, 5.2rem);
+        font-size: clamp(3rem, 16vw, 4.5rem);
     }
 
     .hero__actions {
@@ -246,17 +284,22 @@
 
     .hero__visual {
         min-height: 270px;
+        padding-inline-end: 14px;
     }
 
     .code-window__body {
-        padding-bottom: 82px;
+        padding: 22px 14px 24px;
     }
 
     .code-line {
         font-size: 0.66rem;
     }
 
-    .hero__fake-toast {
-        left: 14px;
+    .notification-form {
+        padding: 17px 14px 18px;
+    }
+
+    .notification-form__row {
+        grid-template-columns: 1fr;
     }
 }

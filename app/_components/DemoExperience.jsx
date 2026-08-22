@@ -8,6 +8,7 @@ import SiteHeader from './SiteHeader'
 
 export default function DemoExperience() {
     const [language, setLanguage] = useState('en')
+    const [position, setPosition] = useState('bottom-center')
     const content = copy[language]
 
     useEffect(() => {
@@ -15,14 +16,18 @@ export default function DemoExperience() {
     }, [language])
 
     return (
-        <ToastProvider defaultDuration={4800} position="bottom-center">
+        <ToastProvider defaultDuration={4800} position={position}>
             <SiteHeader
                 content={content}
                 language={language}
                 onLanguageChange={setLanguage}
             />
             <main>
-                <HeroSection content={content} />
+                <HeroSection
+                    content={content}
+                    onPositionChange={setPosition}
+                    position={position}
+                />
             </main>
         </ToastProvider>
     )
