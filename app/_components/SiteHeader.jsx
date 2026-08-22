@@ -11,8 +11,6 @@ export default function SiteHeader({ content, language, onLanguageChange }) {
             </Link>
 
             <nav className="site-nav" aria-label="Main navigation">
-                <a href="#demo">{content.nav.demo}</a>
-                <a href="#how-it-works">{content.nav.guide}</a>
                 <a
                     className="site-nav__github"
                     href={GITHUB_URL}

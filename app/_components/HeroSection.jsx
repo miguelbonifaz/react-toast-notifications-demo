@@ -1,7 +1,19 @@
-import { ArrowDown, ArrowUpRight, Check, Code2 } from 'lucide-react'
+'use client'
+
+import { ArrowUpRight, Check, Code2 } from 'lucide-react'
+import { useToast } from '@zilver/react-toast-notifications'
 import { GITHUB_URL } from '../content'
 
 export default function HeroSection({ content }) {
+    const { toast } = useToast()
+
+    function approveNotification() {
+        toast({
+            message: content.messages.approved,
+            type: 'success',
+        })
+    }
+
     return (
         <section className="hero" aria-labelledby="hero-title">
             <div className="hero__grid" aria-hidden="true" />
@@ -11,10 +23,10 @@ export default function HeroSection({ content }) {
                     <h1 id="hero-title">{content.hero.title}</h1>
                     <p className="hero__body">{content.hero.body}</p>
                     <div className="hero__actions">
-                        <a className="button button--primary" href="#demo">
-                            {content.hero.demo}
-                            <ArrowDown size={17} aria-hidden="true" />
-                        </a>
+                        <button className="button button--primary" type="button" onClick={approveNotification}>
+                            <Check size={17} aria-hidden="true" />
+                            {content.hero.approve}
+                        </button>
                         <a
                             className="button button--quiet"
                             href={GITHUB_URL}

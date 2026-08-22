@@ -2,8 +2,6 @@ import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import '@zilver/react-toast-notifications/styles.css'
 import './globals.css'
 import './styles/hero.css'
-import './styles/playground.css'
-import './styles/sections.css'
 
 const bodyFont = DM_Sans({
     subsets: ['latin'],

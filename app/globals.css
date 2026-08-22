@@ -70,11 +70,7 @@ select:focus-visible {
     width: 100%;
 }
 
-.eyebrow,
-.mock-label,
-.playground-frame__hint,
-.code-panel__language,
-.footer-cta__note {
+.eyebrow {
     color: var(--paper-faint);
     font-size: 0.68rem;
     font-weight: 600;
