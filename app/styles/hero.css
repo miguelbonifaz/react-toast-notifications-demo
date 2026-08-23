@@ -86,7 +86,6 @@
     max-width: 590px;
     overflow: hidden;
     position: relative;
-    transform: rotate(2deg);
     width: 100%;
     z-index: 1;
 }
@@ -154,10 +153,6 @@
 .code-line--muted {
     color: #52685d;
     text-align: right;
-}
-
-.code-line--soft {
-    color: #7c9a8b;
 }
 
 .code-line b {
@@ -237,16 +232,6 @@
 .notification-form__submit {
     min-height: 42px;
     width: 100%;
-}
-
-.hero__visual-label {
-    bottom: -4px;
-    color: var(--paper-faint);
-    font-size: 0.68rem;
-    left: 0;
-    letter-spacing: 0.12em;
-    position: absolute;
-    text-transform: uppercase;
 }
 
 @media (max-width: 920px) {
