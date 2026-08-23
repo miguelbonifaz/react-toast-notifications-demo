@@ -5,7 +5,7 @@
 }
 
 .hero__grid {
-    background-image: linear-gradient(rgba(216, 229, 217, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(216, 229, 217, 0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(35, 104, 77, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 104, 77, 0.08) 1px, transparent 1px);
     background-size: 68px 68px;
     inset: 0;
     mask-image: linear-gradient(90deg, black, transparent 85%);
@@ -69,7 +69,7 @@
 }
 
 .hero__visual-glow {
-    background: radial-gradient(circle, rgba(84, 221, 176, 0.24), transparent 68%);
+    background: radial-gradient(circle, rgba(93, 214, 159, 0.2), transparent 68%);
     filter: blur(12px);
     height: 520px;
     position: absolute;
@@ -79,10 +79,10 @@
 }
 
 .code-window {
-    background: #17221e;
+    background: #ffffff;
     border: 1px solid var(--line-strong);
     border-radius: 15px;
-    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 35px 90px rgba(23, 55, 43, 0.13);
     max-width: 590px;
     overflow: hidden;
     position: relative;
@@ -92,6 +92,7 @@
 
 .code-window__bar {
     align-items: center;
+    background: #f8fbf9;
     border-bottom: 1px solid var(--line);
     color: var(--paper-faint);
     display: flex;
@@ -112,7 +113,7 @@
 }
 
 .code-window__dots span {
-    background: #657a6e;
+    background: #a8b9af;
     border-radius: 50%;
     height: 6px;
     width: 6px;
@@ -151,17 +152,17 @@
 }
 
 .code-line--muted {
-    color: #52685d;
+    color: #8ca196;
     text-align: right;
 }
 
 .code-line b {
-    color: var(--mint);
+    color: var(--mint-strong);
     font-weight: 500;
 }
 
 .code-line i {
-    color: #f4d48d;
+    color: #a2680d;
     font-style: normal;
 }
 
@@ -188,11 +189,11 @@
 
 .notification-form input,
 .notification-form select {
-    background: rgba(16, 23, 20, 0.72);
+    background: rgba(244, 249, 246, 0.9);
     border: 1px solid var(--line-strong);
     border-radius: 8px;
     color: var(--paper);
-    color-scheme: dark;
+    color-scheme: light;
     font-size: 0.8rem;
     min-height: 40px;
     min-width: 0;
@@ -203,7 +204,7 @@
 
 .notification-form select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23f4f6f4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2317372b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     background-position: right 14px center;
     background-repeat: no-repeat;
     background-size: 14px;
@@ -212,14 +213,14 @@
 
 .notification-form input:hover,
 .notification-form select:hover {
-    background-color: rgba(16, 23, 20, 0.9);
+    background-color: #edf6f0;
 }
 
 .notification-form input:focus,
 .notification-form select:focus {
-    background-color: rgba(16, 23, 20, 0.9);
+    background-color: #ffffff;
     border-color: var(--mint-strong);
-    outline: 2px solid var(--mint);
+    outline: 2px solid rgba(24, 139, 104, 0.28);
     outline-offset: 2px;
 }
 

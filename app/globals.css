@@ -1,20 +1,16 @@
 :root {
-    --ink: #101714;
-    --ink-soft: #17221e;
-    --paper: #f2f4ed;
-    --paper-muted: #cbd3ca;
-    --paper-faint: #91a098;
-    --line: rgba(216, 229, 217, 0.15);
-    --line-strong: rgba(216, 229, 217, 0.28);
+    --ink: #f4f8f5;
+    --ink-soft: #eaf2ec;
+    --paper: #17372b;
+    --paper-muted: #4d675a;
+    --paper-faint: #71877a;
+    --line: rgba(23, 55, 43, 0.12);
+    --line-strong: rgba(23, 55, 43, 0.22);
     --mint: #a7f3d0;
-    --mint-strong: #54ddb0;
-    --coral: #ff9076;
+    --mint-strong: #188b68;
+    --coral: #e8765e;
     --font-body: sans-serif;
     --font-display: sans-serif;
-    --toast-bg: #111113;
-    --toast-text: #f4f4f5;
-    --toast-muted: #a1a1aa;
-    --toast-progress: #09090b;
 }
 
 * {
@@ -22,6 +18,7 @@
 }
 
 html {
+    color-scheme: light;
     scroll-behavior: smooth;
 }
 
@@ -57,7 +54,7 @@ button {
 button:focus-visible,
 a:focus-visible,
 select:focus-visible {
-    outline: 2px solid var(--mint);
+    outline: 2px solid var(--mint-strong);
     outline-offset: 4px;
 }
 
@@ -112,12 +109,12 @@ select:focus-visible {
 }
 
 .button--primary {
-    background: var(--mint);
+    background: var(--paper);
     color: var(--ink);
 }
 
 .button--primary:hover {
-    background: #c7f8de;
+    background: #245442;
 }
 
 .button--quiet {

@@ -13,8 +13,8 @@ export default function OpenGraphImage() {
         (
             <div
                 style={{
-                    background: '#101714',
-                    color: '#f2f4ed',
+                    background: '#f4f8f5',
+                    color: '#17372b',
                     display: 'flex',
                     flexDirection: 'column',
                     fontFamily: 'Arial',
@@ -26,7 +26,7 @@ export default function OpenGraphImage() {
                 <div
                     style={{
                         alignItems: 'center',
-                        color: '#a7f3d0',
+                        color: '#188b68',
                         display: 'flex',
                         fontSize: 30,
                         fontWeight: 700,
@@ -52,8 +52,8 @@ export default function OpenGraphImage() {
                                 width: 26,
                             }}
                         >
-                            <div style={{ background: '#101714', height: 6, width: 26 }} />
-                            <div style={{ background: '#101714', height: 6, width: 18 }} />
+                            <div style={{ background: '#17372b', height: 6, width: 26 }} />
+                            <div style={{ background: '#17372b', height: 6, width: 18 }} />
                         </div>
                     </div>
                     <span>{SITE_NAME}</span>
@@ -69,7 +69,7 @@ export default function OpenGraphImage() {
                 >
                     <div
                         style={{
-                            color: '#a7f3d0',
+                            color: '#188b68',
                             fontSize: 24,
                             letterSpacing: 3,
                             textTransform: 'uppercase',
@@ -93,7 +93,7 @@ export default function OpenGraphImage() {
                     </div>
                     <div
                         style={{
-                            color: '#cbd3ca',
+                            color: '#4d675a',
                             fontSize: 28,
                             marginTop: 28,
                         }}
@@ -102,7 +102,7 @@ export default function OpenGraphImage() {
                     </div>
                 </div>
 
-                <div style={{ color: '#91a098', fontSize: 22 }}>{SITE_URL}</div>
+                <div style={{ color: '#71877a', fontSize: 22 }}>{SITE_URL}</div>
             </div>
         ),
         size,
