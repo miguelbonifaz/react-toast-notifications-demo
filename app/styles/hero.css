@@ -133,7 +133,7 @@
 
 .code-window__body {
     display: grid;
-    gap: 7px;
+    gap: 10px;
     grid-template-columns: 27px 1fr;
     padding: 30px 24px 28px;
 }
