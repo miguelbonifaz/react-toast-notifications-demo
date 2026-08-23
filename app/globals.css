@@ -209,7 +209,7 @@ select:focus-visible {
 
 .language-switcher button:hover,
 .language-switcher button.is-active {
-    color: var(--mint);
+    color: var(--paper);
 }
 
 @media (max-width: 700px) {
