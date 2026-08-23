@@ -7,8 +7,8 @@ export const copy = {
         },
         hero: {
             eyebrow: 'React toast notifications',
-            title: 'Feedback, without the friction.',
-            body: 'A small, accessible toast layer for the moments when your interface needs to speak up.',
+            title: 'Subtle design, natural interaction.',
+            body: 'A toast layer with a thoughtful aesthetic, precise motion, and a simple React integration.',
             github: 'View on GitHub',
             playground: {
                 initialMessage: 'Saved successfully.',
@@ -24,6 +24,7 @@ export const copy = {
                 },
                 position: 'Position',
                 type: 'Type',
+                duration: 'Duration (seconds)',
                 types: {
                     error: 'Error',
                     info: 'Info',
@@ -39,8 +40,8 @@ export const copy = {
         },
         hero: {
             eyebrow: 'Notificaciones toast para React',
-            title: 'Feedback, sin fricción.',
-            body: 'Una capa toast pequeña y accesible para los momentos en que tu interfaz necesita hacerse escuchar.',
+            title: 'Diseño sutil, interacción natural.',
+            body: 'Una capa toast con estética cuidada, movimiento preciso y una integración simple para React.',
             github: 'Ver en GitHub',
             playground: {
                 initialMessage: 'Guardado correctamente.',
@@ -56,6 +57,7 @@ export const copy = {
                 },
                 position: 'Posición',
                 type: 'Tipo',
+                duration: 'Duración (segundos)',
                 types: {
                     error: 'Error',
                     info: 'Información',

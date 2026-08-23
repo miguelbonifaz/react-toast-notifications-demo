@@ -14,12 +14,15 @@ const TOAST_POSITIONS = [
     'bottom-center',
     'bottom-right',
 ]
+const DEFAULT_DURATION_SECONDS = 3
+const MAX_DURATION_SECONDS = 60
 
 export default function HeroSection({ content, onPositionChange, position }) {
     const { toast } = useToast()
     const initialMessage = content.hero.playground.initialMessage
     const [message, setMessage] = useState(initialMessage)
     const [type, setType] = useState('success')
+    const [durationSeconds, setDurationSeconds] = useState(DEFAULT_DURATION_SECONDS)
     const previousInitialMessage = useRef(initialMessage)
 
     useEffect(() => {
@@ -28,6 +31,8 @@ export default function HeroSection({ content, onPositionChange, position }) {
         ))
         previousInitialMessage.current = initialMessage
     }, [initialMessage])
+
+    const durationMilliseconds = durationSeconds * 1000
 
     function launchNotification(event) {
         event.preventDefault()
@@ -41,6 +46,7 @@ export default function HeroSection({ content, onPositionChange, position }) {
         toast({
             message: trimmedMessage,
             type,
+            duration: durationMilliseconds,
         })
     }
 
@@ -85,13 +91,17 @@ export default function HeroSection({ content, onPositionChange, position }) {
                             </span>
                             <span className="code-line code-line--muted">02</span>
                             <span className="code-line code-line--active">
-                                <i>{`  message: '${codeMessage}',`}</i>
+                                <i>{`    message: '${codeMessage}',`}</i>
                             </span>
                             <span className="code-line code-line--muted">03</span>
                             <span className="code-line code-line--active">
-                                <i>{`  type: '${type}'`}</i>
+                                <i>{`    type: '${type}',`}</i>
                             </span>
                             <span className="code-line code-line--muted">04</span>
+                            <span className="code-line code-line--active">
+                                <i>{`    duration: ${durationMilliseconds}`}</i>
+                            </span>
+                            <span className="code-line code-line--muted">05</span>
                             <span className="code-line code-line--active">
                                 {'})'}
                             </span>
@@ -130,6 +140,29 @@ export default function HeroSection({ content, onPositionChange, position }) {
                                             </option>
                                         ))}
                                     </select>
+                                </label>
+                                <label className="notification-form__field">
+                                    <span>{content.hero.playground.duration}</span>
+                                    <input
+                                        inputMode="numeric"
+                                        max={MAX_DURATION_SECONDS}
+                                        min="1"
+                                        step="1"
+                                        type="number"
+                                        value={durationSeconds}
+                                        onChange={(event) => {
+                                            const nextDuration = event.target.valueAsNumber
+
+                                            if (!Number.isFinite(nextDuration)) {
+                                                return
+                                            }
+
+                                            setDurationSeconds(Math.min(
+                                                MAX_DURATION_SECONDS,
+                                                Math.max(1, nextDuration),
+                                            ))
+                                        }}
+                                    />
                                 </label>
                             </div>
                             <button className="button button--primary notification-form__submit" type="submit">

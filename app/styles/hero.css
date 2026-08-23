@@ -147,7 +147,7 @@
 
 .code-line--active {
     overflow-wrap: anywhere;
-    white-space: normal;
+    white-space: pre-wrap;
 }
 
 .code-line--muted {
@@ -212,12 +212,12 @@
 
 .notification-form input:hover,
 .notification-form select:hover {
-    background: rgba(16, 23, 20, 0.9);
+    background-color: rgba(16, 23, 20, 0.9);
 }
 
 .notification-form input:focus,
 .notification-form select:focus {
-    background: rgba(16, 23, 20, 0.9);
+    background-color: rgba(16, 23, 20, 0.9);
     border-color: var(--mint-strong);
     outline: 2px solid var(--mint);
     outline-offset: 2px;
@@ -226,7 +226,7 @@
 .notification-form__row {
     display: grid;
     gap: 12px;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr) minmax(110px, 0.7fr);
 }
 
 .notification-form__submit {
