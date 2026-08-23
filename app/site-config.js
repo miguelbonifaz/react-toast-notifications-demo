@@ -1,0 +1,5 @@
+export const SITE_URL = 'https://react-toast.miguelbonifaz.com'
+export const SITE_NAME = 'React Toast Notifications'
+export const SITE_TITLE = 'React Toast Notifications — Accessible React Demo'
+export const SITE_DESCRIPTION = 'Explore an accessible and extensible React toast notification package with success, info, warning, and error states in a live demo.'
+export const PACKAGE_DESCRIPTION = 'Accessible and extensible toast notifications for React applications.'

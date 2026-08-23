@@ -8,7 +8,7 @@ export const copy = {
         hero: {
             eyebrow: 'React toast notifications',
             title: 'Subtle design, natural interaction.',
-            body: 'A toast layer with a thoughtful aesthetic, precise motion, and a simple React integration.',
+            body: 'An accessible and extensible toast notification layer for React, with precise motion and a simple integration.',
             github: 'View on GitHub',
             playground: {
                 initialMessage: 'Saved before you could blink.',
