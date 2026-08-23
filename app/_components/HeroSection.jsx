@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Bell, Check, Code2 } from 'lucide-react'
-import { useToast } from '@zilver/react-toast-notifications'
+import { useToast } from '@miguel-bonifaz/react-toast-notifications'
 import { GITHUB_URL } from '../content'
 
 const TOAST_TYPES = ['success', 'info', 'warning', 'error']

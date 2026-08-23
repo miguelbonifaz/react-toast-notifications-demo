@@ -1,5 +1,5 @@
 import { DM_Sans, Space_Grotesk } from 'next/font/google'
-import '@zilver/react-toast-notifications/styles.css'
+import '@miguel-bonifaz/react-toast-notifications/styles.css'
 import './globals.css'
 import './styles/hero.css'
 

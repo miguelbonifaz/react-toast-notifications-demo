@@ -1,6 +1,6 @@
 # React Toast Notifications Demo
 
-Interactive bilingual single-hero page for [@zilver/react-toast-notifications](https://github.com/miguelbonifaz/react-toast-notifications). The primary action approves a notification through the real package API.
+Interactive bilingual single-hero page for [@miguel-bonifaz/react-toast-notifications](https://github.com/miguelbonifaz/react-toast-notifications). The primary action approves a notification through the real package API.
 
 ## English
 

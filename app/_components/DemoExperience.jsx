@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ToastProvider } from '@zilver/react-toast-notifications'
+import { ToastProvider } from '@miguel-bonifaz/react-toast-notifications'
 import { copy } from '../content'
 import HeroSection from './HeroSection'
 import SiteHeader from './SiteHeader'
@@ -16,7 +16,7 @@ export default function DemoExperience() {
     }, [language])
 
     return (
-        <ToastProvider defaultDuration={4800} position={position}>
+        <ToastProvider position={position}>
             <SiteHeader
                 content={content}
                 language={language}
