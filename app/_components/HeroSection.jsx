@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { ArrowUpRight, Bell, Code2 } from 'lucide-react'
 import { useToast } from '@miguel-bonifaz/react-toast-notifications'
 import { GITHUB_URL } from '../content'
@@ -17,37 +17,39 @@ const TOAST_POSITIONS = [
 const DEFAULT_DURATION_SECONDS = 3
 const MAX_DURATION_SECONDS = 60
 
+function getRandomMessageIndex(length, currentIndex) {
+    if (length <= 1) {
+        return 0
+    }
+
+    const randomIndex = Math.floor(Math.random() * (length - 1))
+
+    return randomIndex >= currentIndex ? randomIndex + 1 : randomIndex
+}
+
 export default function HeroSection({ content, onPositionChange, position }) {
     const { toast } = useToast()
-    const initialMessage = content.hero.playground.initialMessage
-    const [message, setMessage] = useState(initialMessage)
+    const [messageIndex, setMessageIndex] = useState(0)
     const [type, setType] = useState('success')
     const [durationSeconds, setDurationSeconds] = useState(DEFAULT_DURATION_SECONDS)
-    const previousInitialMessage = useRef(initialMessage)
-
-    useEffect(() => {
-        setMessage((current) => (
-            current === previousInitialMessage.current ? initialMessage : current
-        ))
-        previousInitialMessage.current = initialMessage
-    }, [initialMessage])
+    const messages = content.hero.playground.messages
+    const message = messages[messageIndex]
 
     const durationMilliseconds = durationSeconds * 1000
 
     function launchNotification(event) {
         event.preventDefault()
 
-        const trimmedMessage = message.trim()
-
-        if (!trimmedMessage) {
-            return
-        }
+        const nextMessageIndex = getRandomMessageIndex(messages.length, messageIndex)
+        const nextMessage = messages[nextMessageIndex]
 
         toast({
-            message: trimmedMessage,
+            message: nextMessage,
             type,
             duration: durationMilliseconds,
         })
+
+        setMessageIndex(nextMessageIndex)
     }
 
     const codeMessage = message.replaceAll('\\', '\\\\').replaceAll("'", "\\'")
@@ -107,16 +109,6 @@ export default function HeroSection({ content, onPositionChange, position }) {
                             </span>
                         </div>
                         <form className="notification-form" onSubmit={launchNotification}>
-                            <label className="notification-form__field notification-form__field--message">
-                                <span>{content.hero.playground.message}</span>
-                                <input
-                                    maxLength={80}
-                                    required
-                                    type="text"
-                                    value={message}
-                                    onChange={(event) => setMessage(event.target.value)}
-                                />
-                            </label>
                             <div className="notification-form__row">
                                 <label className="notification-form__field">
                                     <span>{content.hero.playground.type}</span>
