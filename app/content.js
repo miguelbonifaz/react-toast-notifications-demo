@@ -11,7 +11,7 @@ export const copy = {
             body: 'A toast layer with a thoughtful aesthetic, precise motion, and a simple React integration.',
             github: 'View on GitHub',
             playground: {
-                initialMessage: 'Saved successfully.',
+                initialMessage: 'Saved before you could blink.',
                 launch: 'Launch notification',
                 message: 'Message',
                 positions: {
@@ -24,7 +24,7 @@ export const copy = {
                 },
                 position: 'Position',
                 type: 'Type',
-                duration: 'Duration (seconds)',
+                duration: 'duration in seconds',
                 types: {
                     error: 'Error',
                     info: 'Info',

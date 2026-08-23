@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { GITHUB_URL } from '../content'
 
@@ -6,7 +7,13 @@ export default function SiteHeader({ content, language, onLanguageChange }) {
     return (
         <header className="site-header">
             <Link className="brand" href="/" aria-label="React Toast Notifications home">
-                <span className="brand__mark">rt</span>
+                <Image
+                    className="brand__mark"
+                    src="/favicon.svg"
+                    width={28}
+                    height={28}
+                    alt=""
+                />
                 <span className="brand__name">react toast</span>
             </Link>
 
