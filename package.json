@@ -13,7 +13,7 @@
         "node": ">=20.9.0"
     },
     "dependencies": {
-        "@miguel-bonifaz/react-toast-notifications": "0.1.2",
+        "@miguel-bonifaz/react-toast-notifications": "0.1.3",
         "lucide-react": "^0.475.0",
         "next": "16.3.2",
         "react": "19.2.8",
