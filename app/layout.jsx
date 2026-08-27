@@ -1,4 +1,5 @@
 import { DM_Sans, Space_Grotesk } from 'next/font/google'
+import Script from 'next/script'
 import '@miguel-bonifaz/react-toast-notifications/styles.css'
 import './globals.css'
 import './styles/hero.css'
@@ -7,6 +8,7 @@ import {
     SITE_NAME,
     SITE_TITLE,
     SITE_URL,
+    GA_MEASUREMENT_ID,
 } from './site-config'
 
 const bodyFont = DM_Sans({
@@ -74,7 +76,21 @@ export const viewport = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${bodyFont.variable} ${displayFont.variable}`}>{children}</body>
+            <body className={`${bodyFont.variable} ${displayFont.variable}`}>
+                {children}
+                <Script
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+                    strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){window.dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', '${GA_MEASUREMENT_ID}');
+                    `}
+                </Script>
+            </body>
         </html>
     )
 }

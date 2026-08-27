@@ -1,3 +1,4 @@
+export const GA_MEASUREMENT_ID = 'G-Y01P8TKP0R'
 export const SITE_URL = 'https://react-toast.miguelbonifaz.com'
 export const SITE_NAME = 'React Toast Notifications'
 export const SITE_TITLE = 'React Toast Notifications — Accessible React Demo'
